@@ -1,6 +1,7 @@
 .Navbar {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: nowrap;
+    justify-content: space-around;
     align-items: center;
     background-color: gold;
 }
@@ -8,8 +9,8 @@
 img{
     width: 150px;
     height: 170px;
-}
 
+}
 .botonbarra {
     background-color: gold;
     border: none;
@@ -23,3 +24,8 @@ img{
     cursor: pointer;
 
 }
+
+  
+  .NavLink {
+    color :black
+  }

@@ -4,8 +4,8 @@ const ItemDetail = ({name, img, price, category, stock, description}) => {
     return (
         <div className="card">
             <img src={img} alt={name}/>
-            <div className='contain'>
-                <h4 className='text-xl'>{name}</h4>
+            <div className='container'>
+                <h4 className='text'>{name}</h4>
                 <p>{description}</p>
                 <p>Tipo: {category}</p>
                 <p>Cantidad en Stock: {stock}</p>

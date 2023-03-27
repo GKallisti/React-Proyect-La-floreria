@@ -12,7 +12,7 @@ const Navbar = () => {
             
             <div>
                
-            <NavLink to='/category/Licores' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}> <button className = 'botonbarra'>Licores</button> </NavLink>
+            <NavLink to='/category/Vinos' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}> <button className = 'botonbarra'>Vinos</button> </NavLink>
         
             <NavLink to='/category/Destilados' className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}> <button className = 'botonbarra'>Destilados</button></NavLink>
             

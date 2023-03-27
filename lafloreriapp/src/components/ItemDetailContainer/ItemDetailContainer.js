@@ -4,13 +4,9 @@ import { useParams } from 'react-router-dom'
 import ItemDetail from "../ItemDetail/ItemDetail.js";
 
 import { useState, useEffect } from "react";
-
-
 const ItemDetailContainer = () => {
     const [products, setProducts] = useState([])
-
     const { itemId } = useParams()
-
     useEffect( () => {
         getProductsById(itemId)
             .then(response =>{
@@ -19,9 +15,7 @@ const ItemDetailContainer = () => {
         .catch(err =>{
             console.log(err)
         })
-
     }, [itemId])
-
     return(
         <div className="itemdetail">
            

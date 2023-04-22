@@ -4,7 +4,7 @@
     margin: 20px;
     font-size: 12px;
     background-color: gold;
-    border: 3px solid #0000000%, 88%);
+    border: 1px solid #000000;
     border-radius: 15px;
 }
 
@@ -29,7 +29,7 @@
 .Button {
     width: auto;
     padding: 12px;
-    font-si7ze: 8px;
+    font-size: 8px;
     background:gold;
     border-radius: 10px;
     flex: none;

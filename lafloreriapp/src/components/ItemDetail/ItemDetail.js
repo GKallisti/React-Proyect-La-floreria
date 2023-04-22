@@ -1,21 +1,52 @@
 import './ItemDetail.css'
+import ItemCount from '../ItemCount/ItemCount'
+import { useCart } from '../../context/CartContext'
+import { Link } from 'react-router-dom'
+import { useNotification } from '../../notification/NotificationService'
 
-const ItemDetail = ({name, img, price, category, stock, description}) => {
+const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
+    
+    const { addItem, isInCart } = useCart()
+    const { setNotification } = useNotification()
+
+    const handleOnAdd = (quantity) => {
+        const productToAdd = {
+            id, name, price, quantity
+        }
+        if(stock !== 0){
+            addItem(productToAdd)
+            setNotification('success', `Se agrego correctamente ${quantity} ${name}`, 20)
+        } else {
+            setNotification('error', `El producto ${name} no encuentra en stock `, 20)
+        }    }
+
     return (
-        <div className="card">
-            <img src={img} alt={name}/>
-            <div className='container'>
-                <h4 className='text'>{name}</h4>
-                <p>{description}</p>
-                <p>Tipo: {category}</p>
-                <p>Cantidad en Stock: {stock}</p>
-                <h4 className='price'>Precio: ${price}</h4>
-                <div>
-                    <button className='button'>Comprar</button>
-                </div>
-            </div>
-
-        </div>
+        <article className="cardDetailContainer">
+                <h3 className="ItemHeader">
+                    {name}
+                </h3>
+                <img src={img} alt={name} className="ItemImg"/>
+            <section>
+                <p >
+                    Categoria: {category}
+                </p>
+                <p >
+                    Descripción: {description}
+                </p>
+                <p >
+                    Precio: {price}
+                </p>
+            </section>           
+            <footer className='ItemFooter'>
+                {
+                    isInCart(id) ? (
+                        <Link to='/cart'>Ver Changuito</Link>
+                    ) : (
+                        <ItemCount onAdd={handleOnAdd} stock={stock} />
+                    )
+                }
+            </footer>
+        </article>
     )
 }
 

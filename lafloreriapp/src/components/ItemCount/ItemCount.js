@@ -1,8 +1,8 @@
 import { useState } from 'react'
+import './ItemCount.css'
 
 const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
    const [quantity, setQuantity] = useState(initial)
-
    const increment = () => {
        if(quantity < stock) {
            setQuantity(quantity+1)
@@ -23,7 +23,7 @@ const ItemCount = ({stock = 0, initial = 1, onAdd})=> {
                 <button className="Button" onClick={increment}>+</button>
             </div>
             <div>
-                <button className="Button" onClick={() => onAdd(quantity)}>Agregar al carrito</button>
+                <button className="Button" onClick={() => onAdd(quantity)}>Agregar al changuito</button>
             </div>
        </div>
    )

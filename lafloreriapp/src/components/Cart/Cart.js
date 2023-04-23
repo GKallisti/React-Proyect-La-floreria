@@ -6,7 +6,7 @@ const Cart = () => {
 
     return (
     <div>
-    <h2>Changuito</h2>
+    <h3>Changuito</h3>
     <div>
      { cart.map(prod => {
        return (

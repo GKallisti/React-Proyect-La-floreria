@@ -18,7 +18,8 @@ const Navbar = () => {
         .then(snapshot => {
           const categoriesAdapted = snapshot.docs.map(doc => {
             const data = doc.data()
-            return { id: doc.id, ...data}
+            
+            return {id: doc.id, ...data}
           })
           setCategories(categoriesAdapted)
         })
@@ -26,15 +27,13 @@ const Navbar = () => {
 
 return(
      <nav className='Navbar'>
-         <Link to='/' className="nav__link">
-         <img src={logo} alt = 'Logo-Navbar'/>
-          </Link>
+  <Link to='/' className="nav__link"><img src={logo} alt = 'Logo-Navbar'/> </Link>
             
-        <div>{categories.map(cat => {
-              return <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>{cat.label}</NavLink>
-            }) }            
-            </div>
-            <CartWidget />
+  <div className="Categories" >{categories.map(cat => {
+  return <NavLink key={cat.id} to={`/category/${cat.slug}`} className={({ isActive }) => isActive ? 'ActiveOption' : 'Option'}>{cat.label}</NavLink>
+     }) }            
+      </div>
+      <CartWidget />
         </nav>
     )
 }

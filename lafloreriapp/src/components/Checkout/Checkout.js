@@ -7,10 +7,9 @@ import { useNotification } from "../../notification/NotificationService"
 import { useNavigate } from "react-router-dom"
 
 import ContactForm from "../ContactForm/ContactForm"
+import Loader from "../Loader/Loader"
 
 const Checkout = () => {
-
-
     const [loading, setLoading] = useState(false)
     const { cart, total, clearCart } = useCart()
     const [orderId, setOrderId] = useState('')
@@ -75,7 +74,7 @@ const Checkout = () => {
     if (loading) {
         return (
             <div>
-                <h1>Se esta generando su orden...</h1>
+               <Loader/>
             </div>
         )
     }
@@ -89,8 +88,8 @@ const Checkout = () => {
 
     return (
         <div>
-            <h1>Checkout</h1>
-            <h2>Ingrese sus datos</h2>
+            <h1>Ya casi...</h1>
+            <h2>Ingresa tus datos</h2>
             <ContactForm onConfirm={createOrder} />
 
         </div>

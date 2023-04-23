@@ -21,6 +21,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
         }    }
 
     return (
+        
         <article className="cardDetailContainer">
                 <h3 className="ItemHeader">
                     {name}

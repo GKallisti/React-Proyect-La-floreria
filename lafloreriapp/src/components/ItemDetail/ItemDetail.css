@@ -6,6 +6,8 @@
     background-color: gold;
     border: 1px solid #000000;
     border-radius: 15px;
+    height: fit-content;
+    width: fit-content;
 }
 
 .ContainerItem {

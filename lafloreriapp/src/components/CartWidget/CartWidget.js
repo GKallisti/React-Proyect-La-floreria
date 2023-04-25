@@ -9,7 +9,7 @@ const CartWidget = () => {
     const { totalCantidad } = useCart()
     return(
         <div to='/cart' className="contenedorWidget">
-<img src={cart} alt='cart-widget' className='CartImagen'/>
+<img src={cart} alt='cart-widget' className='CartImg'/>
 {totalCantidad}
         </div>
     );

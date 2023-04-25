@@ -41,7 +41,7 @@ const ItemDetail = ({ id, name, img, category, description, price, stock }) => {
             <footer className='ItemFooter'>
                 {
                     isInCart(id) ? (
-                        <Link to='/cart'>Ver Changuito</Link>
+                       <Link to='/cart' className='Option'>Ver Changuito</Link>
                     ) : (
                         <ItemCount onAdd={handleOnAdd} stock={stock} />
                     )
